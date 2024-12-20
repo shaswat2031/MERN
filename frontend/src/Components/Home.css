@@ -1,0 +1,26 @@
+/* Add these styles to your CSS file or in a <style> tag in your component */
+
+@keyframes fall {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.falling-text {
+    display: inline-block;
+    animation: fall 1s ease-in-out forwards;
+    /* Adjust duration and easing */
+    color: orange;
+    /* Set text color to orange */
+}
+
+.bold-text {
+    font-weight: bold;
+    /* Make text bold */
+}
