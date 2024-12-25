@@ -1,9 +1,27 @@
-import React from 'react';
-import './DownloadButton.css'; // Import the CSS file
+import React from "react";
+import confetti from "canvas-confetti";
+import "./DownloadButton.css"; // Import the CSS file
 
 const DownloadButton = () => {
+  const handleButtonClick = () => {
+    // Trigger confetti effect
+    confetti({
+      particleCount: 120, // Number of particles
+      spread: 60, // Spread angle
+      origin: { y: 0.6 }, // Position of the confetti (lower)
+      colors: ["#FFD700", "#FF4500", "#1E90FF"], // Particle colors
+    });
+
+    // Optional: Perform a download action or any other functionality here
+    console.log("Download button clicked!");
+  };
+
   return (
-    <button type="button" className="button fixed bottom-4 right-4">
+    <button
+      type="button"
+      className="button fixed bottom-4 right-4"
+      onClick={handleButtonClick}
+    >
       <span className="button__text">Download</span>
       <span className="button__icon">
         <svg

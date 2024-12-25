@@ -77,7 +77,7 @@ const Home = () => {
           <a href="https://www.linkedin.com/in/shaswat-prasad-14b147266/?originalSubdomain=in" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={30} className="text-blue-600 cursor-pointer" />
           </a>
-          <a href="https://github.com/prasadshaswat" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/shaswat2031" target="_blank" rel="noopener noreferrer">
             <FaGithub size={30} className="text-gray-800 cursor-pointer" />
           </a>
         </motion.div>

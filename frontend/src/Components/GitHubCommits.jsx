@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const GitHubCommits = () => {
+  const [commits, setCommits] = useState([]);
+  
+  useEffect(() => {
+    const fetchCommits = async () => {
+      const response = await fetch('https://api.github.com/repos/prasadshaswat/prasadshaswat/commits');
+      const data = await response.json();
+      setCommits(data);
+    };
+    fetchCommits();
+  }, []);
+
   return (
     <div className='git'>
       <div className='git__header'>
@@ -8,23 +19,18 @@ const GitHubCommits = () => {
         <a href='https://www.github.com/prasadshaswat' className='git__link'>View all</a>
       </div>
       <div className='git__commits'>
-        <div className='git__commit'>
-          <div className='git__commit-info'>
-            <h3 className='git__commit-title'>Commit Title</h3>
-            <p className='git__commit-message'>Commit Message</p>
+        {commits.map((commit, index) => (
+          <div className='git__commit' key={index}>
+            <div className='git__commit-info'>
+              <h3 className='git__commit-title'>{commit.committer.name}</h3>
+              <p className='git__commit-message'>{commit.commit.message}</p>
+            </div>
+            <div className='git__commit-date'>{new Date(commit.committer.date).toLocaleDateString()}</div>
           </div>
-          <div className='git__commit-date'>Date</div>
-        </div>
-        <div className='git__commit'>
-          <div className='git__commit-info'>
-            <h3 className='git__commit-title'>Commit Title</h3>
-            <p className='git__commit-message'>Commit Message</p>
-          </div>
-          <div className='git__commit-date'>Date</div>
-        </div>
+        ))}
       </div>
     </div>
   );
-}
+};
 
 export default GitHubCommits;
