@@ -17,9 +17,9 @@ const Home = () => {
     const timer = setTimeout(() => {
       setAnimateClass("falling-text bold-text");
     }, 900);
-
+  
     const animationDuration = 3000;
-
+  
     const resetAnimation = () => {
       setAnimateClass("");
       setTimeout(() => {
@@ -27,6 +27,15 @@ const Home = () => {
         setAnimateClass("shake-text");
       }, animationDuration);
     };
+  
+    const interval = setInterval(resetAnimation, animationDuration);
+  
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+    };
+  }, [currentWordIndex, words.length]);  // Added words.length to the dependency array
+  
 
     const interval = setInterval(resetAnimation, animationDuration);
 
