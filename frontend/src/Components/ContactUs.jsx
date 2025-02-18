@@ -16,7 +16,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://prasad-shaswat-protifilo.onrender.com/', {
+      const response = await fetch('https://prasad-shaswat-protifilo-fcs8.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
