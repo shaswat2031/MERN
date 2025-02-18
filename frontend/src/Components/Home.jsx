@@ -37,14 +37,7 @@ const Home = () => {
   }, [currentWordIndex, words.length]);  // Added words.length to the dependency array
   
 
-    const interval = setInterval(resetAnimation, animationDuration);
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(timer);
-    };
-  }, [currentWordIndex]);
-
+    
   return (
     <section id="about" className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="w-full max-w-5xl px-6 md:px-12 py-12 md:py-16">
