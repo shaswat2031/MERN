@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   FaGitAlt, FaGithub, FaJava, FaJsSquare, FaPython, FaLinux, FaWindows, 
-  FaReact, FaNodeJs, FaDocker, FaAws, FaDatabase, FaCloud
+  FaReact, FaNodeJs, FaAws, FaCloud
 } from 'react-icons/fa'; // FaCloud icon added
 import {
   SiDjango, SiFlask, SiMongodb, SiMysql, SiExpress, SiTailwindcss, SiFirebase, 
